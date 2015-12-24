@@ -18,7 +18,8 @@ stackgl-shader-experiment
 
 `stackgl-shader-experiment` will download dependencies and generate boilerplate
 code for your experiment. To kick off a live reload server for your experiment,
-simply run `npm start`. Then visit http://localhost:9966 in your browser.
+simply run `npm start`. Then visit [http://localhost:9966](http://localhost:9966)
+in your browser.
 
 The fragment shader being executed can be found in `quad.frag`. Edit this file,
 save it, and it will be reloaded in your browser automatically.
