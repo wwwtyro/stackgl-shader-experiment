@@ -1,6 +1,6 @@
 {
   "name": "stackgl-shader-experiment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates boilerplate for experimenting with a fragment shader.",
   "main": "index.js",
   "bin": {
@@ -16,8 +16,7 @@
   "author": "Rye Terrell",
   "license": "Unlicense",
   "dependencies": {
-    "color-logs": "^0.6.1",
-    "wrench": "^1.5.8"
+    "color-logs": "^0.6.1"
   },
   "devDependencies": {},
   "repository": {

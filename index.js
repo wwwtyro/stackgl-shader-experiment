@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
-var FULL_INSTALL = process.argv.indexOf('--full') > -1;
-
 var path = require('path');
 var fs = require('fs');
 var log = require('color-logs')(true, false, 'stackgl-shader-experiment');
-var copyDirSyncRecursive = require('wrench').copyDirSyncRecursive;
 
 var execFileSync = require('child_process').execFileSync;
 
@@ -33,40 +30,20 @@ try {
     process.exit(1);
 }
 
-if (FULL_INSTALL) {
-    log.info('Installing modules from npm...')
-    try {
-        execFileSync('npm', [
-            'install', '--save', '--silent',
-            'budo',
-            'gl-geometry',
-            'gl-shader',
-            'glslify',
-            'glsl-random'
-        ], {stdio: 'inherit'});
-    } catch (e) {
-        log.error(e.toString());
-        log.error('Error installing modules from npm. Aborting.')
-        process.exit(1);
-    }
-} else {
-    log.info('Installing modules from cache...');
-    try {
-        var depPath = path.join(__dirname, 'deps');
-        var pkgData = fs.readFileSync(path.join(depPath, 'package.json')).toString();
-        var dependencies = JSON.parse(pkgData).dependencies;
-        var localPkgPath = path.join(process.cwd(), 'package.json');
-        var data = fs.readFileSync(localPkgPath).toString();
-        data = JSON.parse(data);
-        data.dependencies = dependencies;
-        data = JSON.stringify(data, null, 2);
-        fs.writeFileSync(localPkgPath, data);
-        copyDirSyncRecursive(path.join(depPath, 'node_modules'), path.join(process.cwd(), 'node_modules'));
-    } catch (e) {
-        log.error(e.toString());
-        log.error('Error installing modules from cache. Aborting.')
-        process.exit(1);
-    }
+log.info('Installing dependencies...')
+try {
+    execFileSync('npm', [
+        'install', '--save', '--silent',
+        'budo',
+        'gl-geometry',
+        'gl-shader',
+        'glslify',
+        'glsl-random'
+    ], {stdio: 'inherit'});
+} catch (e) {
+    log.error(e.toString());
+    log.error('Error installing modules from npm. Aborting.')
+    process.exit(1);
 }
 
 log.info('Generating boilerplate...');
