@@ -1,0 +1,31 @@
+{
+  "name": "stackgl-shader-experiment",
+  "version": "1.0.0",
+  "description": "Generates boilerplate for experimenting with a fragment shader.",
+  "main": "index.js",
+  "bin": {
+    "stackgl-shader-experiment": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stackgl",
+    "boilerplate"
+  ],
+  "author": "Rye Terrell",
+  "license": "Unlicense",
+  "dependencies": {
+    "color-logs": "^0.6.1",
+    "wrench": "^1.5.8"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wwwtyro/stackgl-shader-experiment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wwwtyro/stackgl-shader-experiment/issues"
+  },
+  "homepage": "https://github.com/wwwtyro/stackgl-shader-experiment#readme"
+}
