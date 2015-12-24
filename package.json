@@ -1,6 +1,6 @@
 {
   "name": "stackgl-shader-experiment",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Generates boilerplate for experimenting with a fragment shader.",
   "main": "index.js",
   "bin": {
