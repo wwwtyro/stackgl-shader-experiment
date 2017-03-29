@@ -21,7 +21,7 @@ try {
     var pkg = path.join(process.cwd(), 'package.json');
     var data = fs.readFileSync(pkg).toString();
     data = JSON.parse(data);
-    data.scripts.start = 'budo --live index.js -- -t glslify';
+    data.scripts.start = 'budo index.js --live -- -t glslify';
     data = JSON.stringify(data, null, 2);
     fs.writeFileSync(pkg, data);
 } catch (e) {
